@@ -1,0 +1,39 @@
+﻿@model Mike.Models.Breeding
+
+@{
+    ViewData["Title"] = "Usuń";
+}
+
+<h1>Usuń rekord</h1>
+
+<h3>Czy na pewno chcesz usunąć?</h3>
+<div>
+    <h4>Breeding</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DogRace)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DogRace)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DogName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DogName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Usuń" class="btn btn-danger" /> |
+        <a asp-action="Index">Powrót do listy</a>
+    </form>
+</div>
